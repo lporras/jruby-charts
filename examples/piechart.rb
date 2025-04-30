@@ -26,4 +26,4 @@ pie_plot.set_explode_percent "Fun", 0.20
 pie_image = pie_chart.create_buffered_image 500, 500
 
 # Write the image as a PNG to a file
-javax.imageio.ImageIO.write(pie_image, "PNG", File.open("piechart.png", "w").to_outputstream)
+javax.imageio.ImageIO.write(pie_image, "gif", File.open("piechart.gif", "w").to_outputstream)
