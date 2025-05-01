@@ -6,14 +6,14 @@ require_jar 'org.jfree', 'jfreechart', '1.5.5'
 bar_data = org.jfree.data.category.DefaultCategoryDataset.new
 
 # Add values to the dataset
-bar_data.add_value 44, "Ben and Jerry's", "Flavors"
-bar_data.add_value 31, "Baskin Robbins", "Flavors"
-bar_data.add_value 11, "Cold Stone", "Flavors"
+bar_data.add_value 44, "Ben and Jerry's", "Flavors by creamery"
+bar_data.add_value 31, "Baskin Robbins", "Flavors by creamery"
+bar_data.add_value 11, "Cold Stone", "Flavors by creamery"
 
 # Create a bar chart with default settings
 java_import org.jfree.chart.ChartFactory
 bar_chart = ChartFactory.create_bar_chart "How Many Ice Cream Flavors?",
-                                          "Flavors", "Creamery", bar_data
+                                          "Creamery", "Flavors", bar_data
 
 # Create a buffered image in memory at 500x500
 bar_image = bar_chart.create_buffered_image 500, 500
