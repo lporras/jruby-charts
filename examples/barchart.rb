@@ -19,5 +19,6 @@ bar_chart = ChartFactory.create_bar_chart "How Many Ice Cream Flavors?",
 bar_image = bar_chart.create_buffered_image 500, 500
 
 # Write the image as a PNG to a file
-bar_file = File.open("barchart.png", "w")
+Dir.mkdir("output") unless Dir.exist?("output")
+bar_file = File.open("output/barchart.png", "w")
 javax.imageio.ImageIO.write(bar_image, "PNG", bar_file.to_outputstream)

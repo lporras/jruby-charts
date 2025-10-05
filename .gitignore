@@ -1,6 +1,5 @@
-# Generated chart files
-category_chart.png
-category_chart.svg
-category_chart.pdf
-barchart.png
-piechart.gif
+# Generated chart files in output folder
+output/*.png
+output/*.svg
+output/*.pdf
+output/*.gif

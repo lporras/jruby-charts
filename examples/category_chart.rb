@@ -46,7 +46,8 @@ category_chart_image = BufferedImage.new(width, height, BufferedImage::TYPE_INT_
 category_chart_graphics = category_chart_image.create_graphics
 chart.draw(category_chart_graphics, Rectangle.new(width, height))
 
-category_chart_file = File.open("category_chart.png", "w")
+Dir.mkdir("output") unless Dir.exist?("output")
+category_chart_file = File.open("output/category_chart.png", "w")
 ImageIO.write(category_chart_image, "PNG", category_chart_file.to_outputstream)
 
 # clean up resources
@@ -61,7 +62,7 @@ svg_graphics.defs_key_prefix = "jruby_charts"
 chart.element_hinting = true
 chart.draw(svg_graphics, Rectangle.new(width, height))
 svg = svg_graphics.get_svg_element chart.id
-File.write("category_chart.svg", svg)
+File.write("output/category_chart.svg", svg)
 
 require_jar 'org.jfree', 'org.jfree.pdf', '2.0.1'
 java_import org.jfree.pdf.PDFDocument
@@ -72,4 +73,4 @@ pdf_doc.author = "Charles Oliver Nutter";
 page = pdf_doc.create_page(Rectangle.new(612, 468))
 pdf_graphics = page.graphics2D
 chart.draw(pdf_graphics, Rectangle.new(0, 0, 612, 468))
-File.write("category_chart.pdf", pdf_doc.pdf_bytes)
+File.write("output/category_chart.pdf", pdf_doc.pdf_bytes)

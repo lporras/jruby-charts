@@ -13,7 +13,7 @@ These examples should work with any recent version of JRuby, but we recommend in
 3. Run `jruby -S lock_jars` from the root of this repository to fetch and install the JFreeChart library.
 4. Run any of the scripts in the `examples` directory from the root of this repository!
 
-For example, these commands run from the repository root directory will do the setup and run all the examples, outputting the generated graphs to that same directory:
+For example, these commands run from the repository root directory will do the setup and run all the examples, outputting the generated graphs to the `output` folder:
 
 ```bash
 jruby -S lock_jars
@@ -21,3 +21,12 @@ jruby examples/category_chart.rb
 jruby examples/barchart.rb
 jruby examples/piechart.rb
 ```
+
+Alternatively, you can run all examples at once using the provided main script:
+
+```bash
+jruby -S lock_jars
+jruby main.rb
+```
+
+This will generate all charts from all examples in a single run. All output files will be created in the `output` folder.
